@@ -1,5 +1,6 @@
 const cinema = 'CineHouse';
-const catalogo = require('./catalogo.js');
+const fs = require('fs');
+const catalogo = require('./database/catalogo.json');
 
 function adicionarFilme(titulo, duracao, atores, anoDeLancamento, emCartaz){
     const novoFilme = {
@@ -29,10 +30,17 @@ function buscarFilme(cod){
 function alterarStatusEmCartaz(cod){
     const filmeProcurado = catalogo[cod - 1];
     console.log(filmeProcurado);
-    console.log('\nFilme em que será realizado as alterações: ');
     console.log('-'.repeat(99));
 
-    if(filmeProcurado){
+    if(!filmeProcurado){
+        console.log('Filme não encontrado');
+    }
+
+    const alterar = filmeProcurado.emCartaz == true ? filmeProcurado.emCartaz = false : filmeProcurado.emCartaz = true;
+    console.table(catalogo)
+    return alterar;
+
+    /* if(filmeProcurado){
         if(filmeProcurado.emCartaz == false){
             filmeProcurado.emCartaz = true;
             return console.log(filmeProcurado);
@@ -42,5 +50,19 @@ function alterarStatusEmCartaz(cod){
         }
     }else{
         return console.log('Filme não encontrado!');
+    } */
+}
+
+function listarTodosOsFilmes(cod){
+    for(let i=0; i<catalogo.length; i++){
+        console.log(catalogo[i]);
+    }
+}
+
+function listarFilmesEmCartaz(){
+    for(let i=0; i<catalogo.length; i++){
+        if(catalogo[i].emCartaz == true){
+            console.log(catalogo[i]);
+        }
     }
 }

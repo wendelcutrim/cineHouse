@@ -8,10 +8,10 @@ const catalogo = [{
     },
     {
         codigo: 2,
-        titulo: 'Matrix',
+        titulo: 'One Piece Red',
         duracao: 1.3,
-        atores: ['Keanu Reeves'],
-        anoDeLancamento: 2021,
+        atores: ['Monkey D. Luffy', 'Shanks'],
+        anoDeLancamento: 2022,
         emCartaz: false,
     },
 ];
