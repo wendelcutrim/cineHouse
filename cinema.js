@@ -36,9 +36,9 @@ function alterarStatusEmCartaz(cod){
         console.log('Filme não encontrado');
     }
 
-    const alterar = filmeProcurado.emCartaz == true ? filmeProcurado.emCartaz = false : filmeProcurado.emCartaz = true;
+    const alterandoStatus = filmeProcurado.emCartaz == true ? filmeProcurado.emCartaz = false : filmeProcurado.emCartaz = true;
     console.table(catalogo)
-    return alterar;
+    return alterandoStatus;
 
     /* if(filmeProcurado){
         if(filmeProcurado.emCartaz == false){
@@ -53,7 +53,7 @@ function alterarStatusEmCartaz(cod){
     } */
 }
 
-function listarTodosOsFilmes(cod){
+function listarTodosOsFilmes(){
     for(let i=0; i<catalogo.length; i++){
         console.log(catalogo[i]);
     }
